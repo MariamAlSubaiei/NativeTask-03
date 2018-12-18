@@ -6,7 +6,7 @@ import { List, Content, Button, Text, Icon } from "native-base";
 
 // Store
 import CoffeeStore from "../../store/coffeeStore";
-
+import cartStore from "../../store/cartStore";
 // Component
 import CoffeeItem from "./CoffeeItem";
 
@@ -21,6 +21,7 @@ class CoffeeList extends Component {
         onPress={() => navigation.navigate("CoffeeCart")}
       >
         <Text>
+          {cartStore.sumofQuantity}
           <Icon
             type="FontAwesome"
             name="coffee"

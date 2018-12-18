@@ -6,11 +6,11 @@ import { Text, List, Button } from "native-base";
 // Component
 import CartItem from "./CartItem";
 //Store
-import CartStore from "../../store/cartStore";
+import cartStore from "../../store/cartStore";
 
 class CoffeeCart extends Component {
   render() {
-    const items = CartStore.items;
+    const items = cartStore.items;
     let content;
     if (items) {
       content = items.map((item, index) => (
@@ -21,7 +21,7 @@ class CoffeeCart extends Component {
     return (
       <List>
         {content}
-        <Button full danger>
+        <Button full danger onPress={cartStore.checkoutCart()}>
           <Text>Checkout</Text>
         </Button>
       </List>
